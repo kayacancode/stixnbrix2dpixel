@@ -1,5 +1,20 @@
 import pygame
 import matplotlib
+import time
+import _multiprocessing
+
+## GIF START
+def image_changer(images, queue):
+    for image in images:
+        queue.put(image)
+        time.sleep(0.15)
+if __name__ == '__main__':
+    images = ['000.png', '001.png', '002.png', '003.png', '004.png', '005.png', '006.png', '007.png', '008.png','009.png']
+    queue = multiprocessing.Queue()
+    p = multiprocessing.Process(target=image_changer, args=(images, queue))
+    p.start()
+
+## GIF END
 
 SCREEN_WIDTH= 800
 SCREEN_HEIGHT = 500
@@ -59,7 +74,7 @@ def main_menu():
         screen.blit(snip, (10, 400))
         screen.blit(mario, (player_x,player_y))
 
-
+        p.join()
         pygame.display.flip()
     pygame.quit()
 main_menu()
