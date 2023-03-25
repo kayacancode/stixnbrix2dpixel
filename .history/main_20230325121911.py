@@ -10,12 +10,14 @@ pygame.display.set_caption('Stix n Brix')
 # background 
 background = pygame.image.load('assets/bg.png')
 #mario 
-mario = pygame.image.load('assets/mario.png')
+mario = pygame.image.load('assets/baldman.png')
 
+def add_character_at_location(x,y):
+    screen.blid(mario, (x,y))
 
+x = (SCREEN_WIDTH * 0.95)
+y = (SCREEN_HEIGHT * 0.5)
 
-player_x = 300
-player_y = 100
 #game loop 
 running = True 
 while running:
@@ -25,7 +27,7 @@ while running:
             run = False 
     
     screen.blit(background,(0,0))
-    screen.blit(mario, (player_x,player_y))
+    add_character_at_location(x,y)
     pygame.display.update()
 
 pygame.quit()

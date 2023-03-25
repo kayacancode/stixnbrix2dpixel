@@ -10,12 +10,12 @@ pygame.display.set_caption('Stix n Brix')
 # background 
 background = pygame.image.load('assets/bg.png')
 #mario 
-mario = pygame.image.load('assets/mario.png')
+mario = pygame.image.load('assets/baldman.png')
 
 
 
-player_x = 300
-player_y = 100
+player_x = 40
+player_y = 40
 #game loop 
 running = True 
 while running:

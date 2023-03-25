@@ -15,7 +15,7 @@ mario = pygame.image.load('assets/mario.png')
 
 
 player_x = 300
-player_y = 100
+player_y = 300
 #game loop 
 running = True 
 while running:
