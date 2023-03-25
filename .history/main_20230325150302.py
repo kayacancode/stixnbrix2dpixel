@@ -6,32 +6,39 @@ SCREEN_HEIGHT = 500
 
 
 pygame.init()
-def main_menu():
-    font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    timer = pygame.time.Clock()
-    messages = ["Mario: Hello! My name is Mario and I am the owner of Stix n Brixs",
-                "Welcome to my coffee shop.",
-                "Welcome to your first shift, I am glad to have you here.",
-                "Lets get started by visting the stations. You have 3 options."]
+font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+timer = pygame.time.Clock()
+messages = ["Mario: Hello! My name is Mario and I am the owner of Stix n Brixs",
+            "Welcome to my coffee shop.",
+            "Welcome to your first shift, I am glad to have you here.",
+            "Lets get started by visting the stations. You have 3 options."]
 
+snip = font.render(' ', True, 'white')
+counter = 0
+speed = 3
+active_message = 0
+message = messages[active_message]
+done = False
+
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Stix n Brix')
+# background 
+background = pygame.image.load('assets/bg.png')
+#mario 
+mario = pygame.image.load('assets/mario.png')
+
+player_x = 300
+player_y = 100
+
+
+def main_menu():
     snip = font.render(' ', True, 'white')
     counter = 0
     speed = 3
     active_message = 0
     message = messages[active_message]
     done = False
-
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption('Stix n Brix')
-    # background 
-    background = pygame.image.load('assets/bg.png')
-    #mario 
-    mario = pygame.image.load('assets/mario.png')
-
-    player_x = 300
-    player_y = 100
-
     run = True
     while run:
         screen.fill((0,0,0))
@@ -61,5 +68,6 @@ def main_menu():
 
 
         pygame.display.flip()
-    pygame.quit()
+        pygame.quit()
+
 main_menu()

@@ -1,11 +1,12 @@
 import pygame
 import matplotlib
-
+from button import Button
 SCREEN_WIDTH= 800
 SCREEN_HEIGHT = 500
 
 
 pygame.init()
+
 def main_menu():
     font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -43,7 +44,14 @@ def main_menu():
         elif counter >= speed*len(message):
             done = True
         
-        
+        station1btn = Button(image=pygame.image.load("assets/station1btn.png"), pos=(640, 250), 
+                            text_input="Station 1", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+        station2btn = Button(image=pygame.image.load("assets/station2btn.png"), pos=(640, 400), 
+                            text_input="Station 2 ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+        station3btn = Button(image=pygame.image.load("assets/station3btn.png"), pos=(640, 550), 
+                            text_input="Station 3 ", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+
+        SCREEN.blit(MENU_TEXT, MENU_RECT)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

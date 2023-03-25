@@ -1,11 +1,12 @@
 import pygame
 import matplotlib
-
+from button import Button
 SCREEN_WIDTH= 800
 SCREEN_HEIGHT = 500
 
 
 pygame.init()
+
 def main_menu():
     font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -43,7 +44,7 @@ def main_menu():
         elif counter >= speed*len(message):
             done = True
         
-        
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

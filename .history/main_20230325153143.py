@@ -1,11 +1,12 @@
 import pygame
 import matplotlib
+from button import Button
 
 SCREEN_WIDTH= 800
 SCREEN_HEIGHT = 500
 
-
 pygame.init()
+
 def main_menu():
     font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -13,7 +14,7 @@ def main_menu():
     messages = ["Mario: Hello! My name is Mario and I am the owner of Stix n Brixs",
                 "Welcome to my coffee shop.",
                 "Welcome to your first shift, I am glad to have you here.",
-                "Lets get started by visting the stations. You have 3 options."]
+                "Lets get started by visiting the stations. You have 3 options."]
 
     snip = font.render(' ', True, 'white')
     counter = 0
@@ -32,17 +33,30 @@ def main_menu():
     player_x = 300
     player_y = 100
 
+    # Define the button dimensions and padding
+    button_width = 120
+    button_height = 50
+    padding = 20
+
+    # Create the buttons and set their positions
+    button1 = Button(SCREEN_WIDTH/2-(3*button_width/2+2*padding), 350, button_width, button_height, "Station 1")
+    button2 = Button(SCREEN_WIDTH/2-button_width/2, 350, button_width, button_height, "Station 2")
+    button3 = Button(SCREEN_WIDTH/2+(3*button_width/2+2*padding), 350, button_width, button_height, "Station 3")
+
     run = True
     while run:
         screen.fill((0,0,0))
         screen.blit(background, (0,0))
         timer.tick(60)
+        # Draw the buttons
+        button1.draw(screen)
+        button2.draw(screen)
+        button3.draw(screen)
         pygame.draw.rect(screen, 'black', [0, 400, 800, 100])
         if counter < speed * len(message):
             counter += 1
         elif counter >= speed*len(message):
             done = True
-        
         
 
         for event in pygame.event.get():
@@ -62,4 +76,5 @@ def main_menu():
 
         pygame.display.flip()
     pygame.quit()
+
 main_menu()

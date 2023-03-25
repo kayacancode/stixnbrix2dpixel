@@ -6,6 +6,7 @@ SCREEN_HEIGHT = 500
 
 
 pygame.init()
+
 def main_menu():
     font = pygame.font.Font('fonts/IBMPlexMono-Bold.ttf', 18)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -62,4 +63,3 @@ def main_menu():
 
         pygame.display.flip()
     pygame.quit()
-main_menu()
