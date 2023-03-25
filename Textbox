@@ -11,7 +11,8 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 timer = pygame.time.Clock()
 messages = ["Mario: Hello! My name is Mario and I am the owner of Stix n Brixs",
             "Welcome to my coffee shop.",
-            "Welcome to your first shift, I am glad to have you here."]
+            "Welcome to your first shift, I am glad to have you here.",
+            "Instructions"]
 
 snip = font.render(' ', True, 'white')
 counter = 0
