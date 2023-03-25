@@ -42,12 +42,3 @@ while running:
     pygame.display.update()
 
 pygame.quit()
-
-def main_menu():
-    pygame.display.set_caption("Menu")
-
-    while True:
-        screen.blit(background,(0,0))
-        station1_button = 
-        station1_button = 
-        station1_button = 
